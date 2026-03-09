@@ -300,7 +300,7 @@ while i < 5:
     print('*' * i)
 
 # 함수 정의
-def sum1(a, b)
+def sum1(a, b):
     x = a + b
     return x
 
@@ -340,3 +340,4 @@ print(chr(48))
 print(ord('a'))
 print(ord('0'))
 
+# 객체 x가 가진 멤버 변수와 멤버 함수 보여주기
