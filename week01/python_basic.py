@@ -407,4 +407,20 @@ urllib.request.Request('http://www.sunmoon.ac.kr')
 import pandas
 pandas.DataFrame()
 
-from datetime
+from datetime import datetime
+datetime.now()
+
+# 파일 객체 생성
+f = open('example.txt', 'w')
+print(f)
+
+# 파일 닫기
+f.close()
+
+# 파일 쓰기
+f = open('example.txt', 'w')
+for i in range(1, 6):
+    data = '%d번째 줄입니다. \n' % i
+    f.write(data)
+f.close
+
