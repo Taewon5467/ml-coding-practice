@@ -402,4 +402,7 @@ print(sorted('Python'))
 # Request('http://www.sunmoon.ac.kr')   # 오류 발생
 
 import urllib.request
-urllib.request.Request
+urllib.request.Request('http://www.sunmoon.ac.kr')
+
+import pandas
+pandas.DateFrame()
