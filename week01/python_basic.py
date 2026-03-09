@@ -108,3 +108,15 @@ print(b[0] + " hi~ ^^;")
 print(a * 3)
 
 # 리스트 수정
+a[2] = 99
+print(a)
+
+a[1:2] = ['a', 'b', 'c']
+print(a)
+
+a[-1] = ['d', 'e', 'f']
+print(a)
+
+# 삭제
+del a[-1]
+print(a)
