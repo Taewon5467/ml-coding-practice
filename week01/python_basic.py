@@ -196,3 +196,8 @@ print(dic)
 # 원소의 value 구하기
 print(dic.keys())
 print(list(dic.keys()))
+
+for key in dic.keys():
+    print(dic[key])
+
+# value의 리스트 만들기
