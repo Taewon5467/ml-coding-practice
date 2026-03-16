@@ -76,7 +76,7 @@ print(df.head())
 
 # 필터링 조건 설정
 condition = (
-    (df['comment_lengh'] > 100) &       # 댓글 길이 100자 이상
+    (df['comment_length'] > 100) &       # 댓글 길이 100자 이상
     (df['likes'] >= 20) &               # 좋아요 20개 이상
     (~df['is_spam']) &                  # 스팸 댓글이 아니어야 함
     (df['has_image'])                   # 이미지가 포함된 댓글이어야 함
@@ -173,7 +173,7 @@ print(np.array(sample_df))
 sample_np = np.array(sample_df)
 print(pd.DataFrame(sample_np))      # 컬럼명이 0, 1, 2, 3, 4
 
-print(sample_df.colums)             # 기존 프레임워크에서 컬럼명 가져오기
+print(sample_df.columns)             # 기존 프레임워크에서 컬럼명 가져오기
 
 print(pd.DataFrame(sample_np, colums = sample_df.columns))      # 새 프레임워크에 컬럼명 붙이기
 
