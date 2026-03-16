@@ -29,4 +29,9 @@ print(sample_df['var_5'])
 print(sample_df[['var_1', 'var_2']])
 
 # loc 는 location의 앞글자
-print(sample_df.loc['a'])
+print(sample_df.loc['a'])                # 행 기준으로 인덱싱
+print(sample_df.loc[['a','c','e']])
+print(sample_df.loc['a':'c'])
+
+# iloc: integer location의 약자
+print(sample_df.iloc)
