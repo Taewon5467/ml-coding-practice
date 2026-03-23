@@ -186,3 +186,32 @@ plt.legend()
 plt.grid(True)
 plt.savefig('Figure08.png')
 plt.close()
+
+## **박스 플롯 : 승객 나이의 데이터 분포, 중앙값, 이상치 살펴보기**
+
+# 결측치 처리
+titanic = titanic.dropna(subset=['Age'])
+print(titanic.info())
+
+# 승객 등급에 따른 나이의 박스 플롯
+plt.boxplot([titanic[titanic['Pclass'] == 1]['Age'],
+             titanic[titanic['Pclass'] == 2]['Age'],
+             titanic[titanic['Pclass'] == 3]['Age']],
+             labels=['1st Class', '2nd Class', '3rd Class'])
+
+plt.title('Box Plot for Age by Pclass')
+plt.xlabel('Pclass')
+plt.ylabel('Age')
+plt.savefig('Figure09.png')
+plt.close()
+
+"""### **바이올린 플롯 : 승객 등급에 따른 나이 분포 표시하기**"""
+
+# 결측치 처리
+titanic['Age'] = titanic['Age'].fillna(titanic['Age'].mean())
+print(titanic.info())
+
+# 바이올린 플롯 그리기
+plt.figure(figsize=(10, 6))
+
+# showmeans=False는 평균값을 표시하지 않도록 하고, 
