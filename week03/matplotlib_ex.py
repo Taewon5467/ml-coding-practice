@@ -309,7 +309,7 @@ plt.tick_params(axis='y', labelcolor='deeppink')
 plt.legend(loc='upper right')
 
 # 제목 설정
-plt.subtitle('Survivel Analysis by Number of Parents/Children (Parch) on the Titanic')
+plt.suptitle('Survivel Analysis by Number of Parents/Children (Parch) on the Titanic')
 plt.tight_layout()
 plt.savefig('Figure13.png')
 plt.close()
@@ -342,7 +342,7 @@ y2 = parch_counts[1].values # 생존자
 fig, axes = plt.subplots(2, 1, figsize=(10, 10))
 
 # 첫 번째 서브플롯 설정(선 그래프)
-axes[0].plot(x, y1, '-o', color='indigo', makersize=7, linewidth=3, alpha=0.7, label='Not Survived')
+axes[0].plot(x, y1, '-o', color='indigo', markersize=7, linewidth=3, alpha=0.7, label='Not Survived')
 axes[0].set_xlabel('Parch')
 axes[0].set_ylabel('Not Survived Count', color='indigo')
 axes[0].tick_params(axis='y', labelcolor='indigo')
@@ -377,7 +377,7 @@ y2 = parch_counts[1].values # 생존자
 fig, ax1 = plt.subplots()
 
 # 첫 번째 그래프 설정 (선 그래프)
-ax1.plot(x, y1, '-s', color='indigo', makersize=7, linewidth=5, alpha=0.7, label='Not Survived')
+ax1.plot(x, y1, '-s', color='indigo', markersize=7, linewidth=5, alpha=0.7, label='Not Survived')
 ax1.set_xlabel('Parch') # x축의 레이블
 ax1.set_ylabel('Not Survived Count', color='indigo') # y축의 레이블
 ax1.tick_params(axis='y', labelcolor='indigo') # 눈금의 모양과 속성
