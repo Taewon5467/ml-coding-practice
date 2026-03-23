@@ -248,4 +248,22 @@ print(fare_std)
 plt.figure(figsize=(10, 6))
 
 # 에러바 생성
-plt.errorbar(fare_means.index, fare_means, yerr=fare_std, fmt='o',)
+plt.errorbar(fare_means.index, fare_means, yerr=fare_std, fmt='o',
+             capsize=5, capthick=1, label='Fare')
+
+plt.title('Error Bar Plot of Fare by Parch')
+plt.xlabel('Parch')
+plt.ylabel('Fare')
+plt.xticks(fare_means.index)
+plt.legend()
+plt.savefig('Figure11.png')
+plt.close()
+
+## **개별 서브플롯을 하나씩 생성하기**
+plt.subplot(2, 2, 1)
+plt.plot([1, 2, 3])
+
+plt.subplot(2, 2, 2)
+plt.subplot([4, 5, 6])
+
+plt.subplot
