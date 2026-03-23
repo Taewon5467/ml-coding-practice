@@ -356,4 +356,12 @@ axes[1].tick_params(axis='y', labelcolor='deeppink')
 axes[1].legend(loc='upper right')
 
 # 제목 설정
-fig.suptitle('Survival Analysis by Number of Parents/Children')
+fig.suptitle('Survival Analysis by Number of Parents/Children (Parch) on the Titanic')
+fig.tight_layout()
+plt.savefig('Figure15.png')
+plt.close()
+
+## **하나의 서브플롯에 여러 그래프 그리기**
+
+# 각 부모와 자녀의 수에 따른 생존자와 사망자 수 계산
+parch_counts = titanic.groupby('Parch')['Survived'].value_counts.unstack()
