@@ -77,3 +77,6 @@ for i, value in enumerate(survived_counts):
     plt.text(value + 1, i, str(value), ha='left', va='center')
 
 plt.savefig('Figure03.png')
+plt.close()
+
+"""### **산점도 그래프 : 성별에 따른 생존자 수 확인하기**"""
