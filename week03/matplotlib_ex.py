@@ -26,4 +26,9 @@ import matplotlib as plt
 plt.plot(pclass_survived_mean['Pclass'], pclass_survived_mean['Survived'], 
          marker='o', linestyle='-', color='violet')
 plt.title('Survival Rate Varigation Across Passenger Classes')
-plt.xlabel()
+plt.xlabel('Pclass')
+plt.ylabel('survuval Rate')
+plt.xticks([1, 2, 3])
+plt.grid(True)
+plt.savefig('Figure01.png')     # 결과를 그림파일로 저장
+plt.close()                     # 
