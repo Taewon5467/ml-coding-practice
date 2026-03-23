@@ -228,4 +228,16 @@ plt.ylabel('Age')
 plt.xticks([1, 2, 3], ['1st Class', '2nd Class', '3rd Class'])
 
 # 범례 설정
-plt.legend(violin_plot['bodies'], ['1st Class', '2ed Class', '3rd Class'])
+plt.legend(violin_plot['bodies'], ['1st Class', '2ed Class', '3rd Class'],
+           title='Pclass', loc="upper right")
+plt.savefig('Figure10.png')
+plt.clase()
+
+## **에러 바 : 요금의 평균과 표준편차 표현하기**
+
+# 각 부모와 자녀의 수에 대한 요금의 평균과 표준 편차 계산
+fare_means = titanic.groupby('Parch')['Fare'].mean()    # 평균
+print(fare_means, '\n')
+
+fare_std = titanic.groupby('Parch')['Fare'].std()       # 표준편차
+print(fare_std)
