@@ -39,7 +39,7 @@ for set_ in (start_train_set, start_test_set):
 """
 
 housing = start_test_set.drop("median_house_value", axis=1)
-housing_labels = strat_train_set["median_house_value"].copy()
+housing_labels = start_train_set["median_house_value"].copy()
 
 # 데이터를 정제
 # null 값이 있는 행 확인하기
