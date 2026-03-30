@@ -23,8 +23,8 @@ housing = load_housing_data()
 from sklearn.model_selection import train_test_split
 
 housing["income_cat"] = pd.cut(housing["median_income"],
-                                bins[0., 1.5, 3.0, 4.5, 6., np.inf],
-                                labels=[1, 2, 3, 4, 5])
+                               bins=[0., 1.5, 3.0, 4.5, 6., np.inf],
+                               labels=[1, 2, 3, 4, 5])
 
 start_train_set, start_test_set = train_test_split(
     housing, test_size=0.2, stratify=housing["income_cat"], random_state=42)
