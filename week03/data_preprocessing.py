@@ -51,16 +51,16 @@ from sklearn.impute import SimpleImputer
 imputer = SimpleImputer(strategy="median")
 
 # 수치형 특성만 추출
-housing_num = housing.select_dtype(include=[np.number])
+housing_num = housing.select_dtypes(include=[np.number])
 housing_num.head()
 
-imputer.fig(housing_num)
+imputer.fit(housing_num)
 
 print(imputer.statistics_)          # imputer 결과 값
 print(housing_num.median().values)  # 수동으로 게산한 중간값
 
 # 훈련 세트의 누락값을 imputer가 학습한 값으로 채우기
-x = imputer.transfrom(housing_num)
+X = imputer.transform(housing_num)
 
 imputer.feature_names_in_
 
