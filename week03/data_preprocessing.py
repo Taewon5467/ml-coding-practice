@@ -35,4 +35,11 @@ for set_ in (start_train_set, start_test_set):
 """
 * 원본 훈련 세트로 복원하고 타깃을 분리
 * 'strat_train_set.drop()'은 지정한 열을 제외한 'strat_train_set'의 복사본을 만듦
-* 'inplace=True'로 지정하지 않은 한 'st"""
+* 'inplace=True'로 지정하지 않은 한 'strat_train_set' 자체를 수정하지 않음
+"""
+
+housing = start_test_set.drop("median_house_value", axis=1)
+housing_labels = strat_train_set["median_house_value"].copy()
+
+# 데이터를 정제
+# null 값이 있는 행 확인하기
