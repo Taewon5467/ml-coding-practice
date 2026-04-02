@@ -1,23 +1,10 @@
 # -*- coding: utf-8 -*-
 
 # 데이터 준비
-from pathlib import Path
 import numpy as np
 import pandas as pd
-import tarfile
-import urllib.request
 
-def load_housing_data():
-    tarball_path = Path("datasets/housing.tgz")
-    if not tarball_path.is_file():
-        Path("datasets").mkdir(parents=True, exist_ok=True)
-        url = "https://github.com/ageron/data/raw/main/housing.tgz"
-        urllib.request.urlretrieve(url, tarball_path)
-        with tarfile.open(tarball_path) as housing_tarball:
-            housing_tarball.extractall(path="datasets")
-    return pd.read_csv(Path("datasets/housing/housing.csv"))
-        
-housing = load_housing_data()
+housing = pd.read_csv('./week04/housing.csv')       # 오류 발생 시,
 
 # 테스트 세트 만들기
 from sklearn.model_selection import train_test_split
@@ -41,10 +28,10 @@ for set_ in (strat_train_set, strat_test_set):
 housing = strat_train_set.drop("median_house_value", axis=1)
 housing_labels = strat_train_set["median_house_value"].copy()
 
-# 데이터를 정제
+# 데이터 정제
 # null 값이 있는 행 확인하기
 null_rows_idx = housing.isnull().any(axis=1)
-housing.loc[null_rows_idx].head()
+housing_labels = strat_train_set["median_house_value"].copy()
 
 from sklearn.impute import SimpleImputer
 
@@ -71,8 +58,8 @@ housing_tr.loc[null_rows_idx].head()
 # 이상치 삭제
 from sklearn.ensemble import IsolationForest
 
-isolation_forest = IsolationForest(random_state=42)
-outlier_pred = isolation_forest.fit_predict(X)
+isolation_Forest = IsolationForest(random_state=42)
+outlier_pred = isolation_Forest.fit_predict(X)
 
 outlier_pred
 
@@ -85,9 +72,9 @@ housing_cat.head(8)
 
 from sklearn.preprocessing import OrdinalEncoder
 
-ordinal_encoder = OrdinalEncoder()
-housing_cat_encoded = ordinal_encoder.fit_transform(housing_cat)
+Ordinal_encoder = OrdinalEncoder()
+housing_cat_encoded =  Ordinal_encoder.fit_transform(housing_cat)
 
 housing_cat_encoded[:8]
 
-ordinal_encoder.categories_
+Ordinal_encoder.categories_
