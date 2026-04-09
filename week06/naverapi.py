@@ -59,4 +59,10 @@ def main():
                 try:
                     response = urllib.request.urlopen(req)
                     if response.getcode() == 200:
-                        print("[%s] Url Request Success" % datetime.datetime.no)
+                        print("[%s] Url Request Success" % datetime.datetime.now())
+                        return response.red().decode('utf-8')
+                except Exception as e:
+                    print(e)
+                    print("[%s] Error for Url : %s" % (datetime.datetime.now(), url))
+                    return None
+                
