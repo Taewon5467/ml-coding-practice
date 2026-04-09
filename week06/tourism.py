@@ -68,4 +68,4 @@ def getTourismStatsItem(yyyymm, nat_cd, ed_cd):
 
    responseDecode = getRequestUrl(url)                       #[CODE 1]
 
-   if 
+   if (response )
