@@ -37,4 +37,5 @@ def main():
             print('%s_naver_%s.json SAVED' % (srcText, node))
 
 
-            def getNa
+            def getNaverSearch(node, stcText, page_start, display):
+                base = ""
