@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import urllib.request
 import datetime
 import json
@@ -5,4 +6,11 @@ import pandas as pd
 
 ServiceKey = "a3fae5c83f80fff732da65ddec142d974d67b451082a71831e88e39ad3291be1"
 
-"""###"""
+"""### [CODE 0]"""
+
+def main:
+JsonResilt = []
+result = []
+
+print("<< 국내 입국한 외국인의 통계 데이터를 수집합니다. >>")
+nat_cd = input('국가 코드를 입력하세요(중국: 112 / 일본: 130 / 미국: 275) :')
