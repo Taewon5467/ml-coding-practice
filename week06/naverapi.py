@@ -17,5 +17,7 @@ def main():
     total = jsonResponse['total']
 
     while ((jsonResponse != None) and (jsonResponse['display'] != 0)):
-                 
+        for post in jsonResponse['items']:
+            cnt += 1
+            getPostData()             
                                
