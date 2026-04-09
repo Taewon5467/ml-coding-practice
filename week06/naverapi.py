@@ -50,4 +50,5 @@ def main():
                 else:
                     return json.loads(responseDecode)
                 
-                def getRequestUrl(url):
+            def getRequestUrl(url):
+                req = urllib.request.Request(url)
