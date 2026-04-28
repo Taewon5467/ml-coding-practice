@@ -57,4 +57,17 @@ dummy_clf = DummyClassifier()
 dummy_clf.fit(X_train, y_train_5)
 print(any(dummy_clf.predict(X_train)))
 
-print(cross_val_score(dummy_clf, X_train, y_train_5, cv=3, scoring=))
+print(cross_val_score(dummy_clf, X_train, y_train_5, cv=3, scoring="accuracy"))
+
+# 오차 행렬
+from sklearn.model_selection import cross_val_predict
+
+y_train_pred = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3)
+
+from sklearn.metrics import confusion_matrix
+
+cm = confusion_matrix(y_train_5, y_train_pred)
+print(cm)
+
+y_train_perfect_predictions = y_train_5     # 완벽한 분류기일 경우
+print(confusion_matrix(y_train_5, y_train_perfect_predictions))
