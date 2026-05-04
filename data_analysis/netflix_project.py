@@ -51,4 +51,4 @@ netflix.isna().sum()
 # ratihg 컬럼의 값을 age_group이라는 새로운 컬럼으로 복사
 netflix['age_group'] = netflix['rating']
 
-# 시청 등급 기준표를 참고하여 Netflix
+# 시청 등급 코드를 더 이해하기 쉬운 표현으로 매핑할 딕셔너리 정의(Key, value 선언)
