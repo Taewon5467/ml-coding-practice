@@ -119,3 +119,4 @@ genres
 
 # [1단게] listed_in 열에 있는 장르를 쉼표로 분할하기
 # 예시) 인덱스 1의 listed_id 열 값 : International TV Shows, Tv Drames, TV Mysteries
+netflix
