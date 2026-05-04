@@ -178,4 +178,6 @@ netflix_age_country_unstack
 netflix_age_country_unstack = netflix_age_country_unstack.div(netflix_age_country_unstack.sum(axis=0), axis=1)
 netflix_age_country_unstack
 
-# 나이 
+plt.figure(figsize=(15, 5))
+
+# 사용자 정의 컬러맵 만들기
