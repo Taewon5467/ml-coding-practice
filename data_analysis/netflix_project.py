@@ -52,3 +52,21 @@ netflix.isna().sum()
 netflix['age_group'] = netflix['rating']
 
 # 시청 등급 코드를 더 이해하기 쉬운 표현으로 매핑할 딕셔너리 정의(Key, value 선언)
+age_group_dic = {
+    'G': 'All',
+    'TV-G': 'All',
+    'TV-Y': 'All',
+    'PG': 'Older Kids',
+    'TV-Y7': 'Older Kids',
+    'TV-Y7-FV': 'Older Kids',
+    'TV-PG': 'Older Kids',
+    'PG-13': 'Teens',
+    'TV-14': 'Young Adults',
+    'NC-17': 'Adults',
+    'NR': 'Adults',
+    'UR': 'Adults',
+    'R': 'Adults',
+    'TV-MA': 'Adults'
+    }
+
+# map 함수를 이용하여 rating 컬럼의 값을 딕셔너리를 기반으로 변환하여 
