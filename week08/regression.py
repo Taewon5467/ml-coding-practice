@@ -8,5 +8,8 @@ plt.rc('xtick', labelsize=10)
 plt.rc('ytick', labelsize=10)
 
 import numpy as np
+
+np.random.seed(42)                  
 m = 100
-x = 2 * np.random
+X = 2 * np.random.rad(m, 1)
+y = 4 + 3 * X + 
