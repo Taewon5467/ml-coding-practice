@@ -30,7 +30,7 @@ lin_reg = LinearRegression()
 lin_reg.fit(X, y)
 lin_reg.intercept_, lin_reg.coef_
 
-X_new = np.array([0], [2])
+X_new = np.array([[0], [2]])
 print(lin_reg.predict(X_new))
 
 # 확률적 경사 하강법
