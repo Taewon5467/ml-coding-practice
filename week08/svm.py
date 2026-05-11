@@ -28,5 +28,7 @@ from sklearn.preprocessing import PolynomialFeatures
 X, y = make_moons(n_samples=100, noise=0.15, random_state=42)
 
 Polynomial_svm_clf = make_pipeline(
-    
+    PolynomialFeatures(degree=3),
+    StandardScaler(),
+    LinearSVD
 )
