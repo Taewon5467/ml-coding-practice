@@ -108,3 +108,5 @@ plt.text(th2 - 0.01, axes[2] + 0.05, "Depth=1",
          horizontalalignment="right", fontsize=13)
 plt.axis(axes)
 plt.legend(loc=(0.32, 0.67))
+
+plt.show
