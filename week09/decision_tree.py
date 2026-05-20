@@ -48,3 +48,8 @@ print(tree_clf2.score(X_moons_test, y_moons_test))
 # 회귀
 
 from skleanr.tree import DecisionTree
+import numpy as np
+
+np.random.seed(42)
+X_quad = np.random.rand(200, 1) - 0.5   # 간단한 랜덤 입력 특성
+y_quad = X_quad ** 2 + 0.025 * np.random.randn(200, 1)
