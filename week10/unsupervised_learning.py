@@ -99,4 +99,5 @@ for k in (3, 4, 5, 6):
         pos +=  len(coeffs) + padding
 
     plt.gca().yaxis.set_major_locator(FixedLocator(ticks))
-    plt.gca().yaxis.set_major_locator(FixedLocator(ticks))
+    plt.gca().yaxis.set_major_formatter(FixedFormatter(range(k)))
+    
