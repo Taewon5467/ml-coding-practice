@@ -64,6 +64,8 @@ plt.show()
 
 from sklearn.metrics import silhouette_score
 
+print(silhouette_score(X, kmeans.labels_))
+
 silhouette_scores = [silhouette_score(X, model.labels_) for model in kmeans_per_k[1:]]
 
 plt.figure(figsize=(8, 3))
@@ -100,4 +102,3 @@ for k in (3, 4, 5, 6):
 
     plt.gca().yaxis.set_major_locator(FixedLocator(ticks))
     plt.gca().yaxis.set_major_formatter(FixedFormatter(range(k)))
-    
