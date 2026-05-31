@@ -69,7 +69,7 @@ print(silhouette_score(X, kmeans.labels_))
 silhouette_scores = [silhouette_score(X, model.labels_) for model in kmeans_per_k[1:]]
 
 plt.figure(figsize=(8, 3))
-plt.plot(range(2, 10), silhouette_score, "bo-")
+plt.plot(range(2, 10), silhouette_scores, "bo-")
 plt.xlabel("$k$")
 plt.ylabel("실루엣 점수")
 plt.axis([1.8, 8.5, 0.55, 0.8])
