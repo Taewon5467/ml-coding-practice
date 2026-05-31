@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
 
-plt.rc('font', family='Malgun Gothic') # 윈도우: 맑은 고딕
+plt.rc('font', family='Malgun Gothic')  # 윈도우: 맑은 고딕
 plt.rcParams['axes.unicode_minus'] = False  # 마이너스(-) 기호 깨짐 방지
 
 plt.rc('font', size=14)
@@ -16,7 +16,7 @@ from sklearn.datasets import make_blobs
 import numpy as np
 
 blob_centers = np.array([[ 0.2,  2.3], [-1.5 ,  2.3], [-2.8,  2.8],
-                         [-2.8, 4.2], [-2.8, 1.0]])
+                         [-2.8,  4.2], [-2.8,  1.0]])
 blob_std = np.array([0.4, 0.3, 0.1, 0.1, 0.1])
 X, y = make_blobs(n_samples=2000, centers=blob_centers, cluster_std=blob_std,
                   random_state=7)
@@ -98,7 +98,7 @@ for k in (3, 4, 5, 6):
         plt.fill_betweenx(np.arange(pos, pos + len(coeffs)), 0, coeffs,
                           facecolor=color, edgecolor=color, alpha=0.7)
         ticks.append(pos + len(coeffs) // 2)
-        pos +=  len(coeffs) + padding
+        pos += len(coeffs) + padding
 
     plt.gca().yaxis.set_major_locator(FixedLocator(ticks))
     plt.gca().yaxis.set_major_formatter(FixedFormatter(range(k)))
@@ -107,12 +107,12 @@ for k in (3, 4, 5, 6):
 
     if k in (5, 6):
         plt.gca().set_xticks([-0.1, 0, 0.2, 0.4, 0.6, 0.8, 1])
-        plt.xlabel("실루엣 개수")
+        plt.xlabel("실루엣 계수")
     else:
         plt.tick_params(labelbottom=False)
 
-        plt.axvline(x=silhouette_scores[k - 2], color="red", linestyle="--")
-        plt.title(f"$k={k}$")
+    plt.axvline(x=silhouette_scores[k - 2], color="red", linestyle="--")
+    plt.title(f"$k={k}$")
 
 plt.show()
 
@@ -139,8 +139,8 @@ def plot_dbscan(dbscan, X, size, show_xlabels=True, show_ylabels=True):
     anomalies = X[anomalies_mask]
     non_cores = X[non_core_mask]
 
-    plt.scatter(cores[:, 0], cores[:, 1], c=dbscan.labels_[core_mask], maker='o', s=size, cmap="paired")
-    plt.scatter(cores[:, 0], cores[:, 1], maker='*', s=20, c=dbscan.labels_[core_mask])
+    plt.scatter(cores[:, 0], cores[:, 1], c=dbscan.labels_[core_mask], marker='o', s=size, cmap="Paired")
+    plt.scatter(cores[:, 0], cores[:, 1], marker='*', s=20, c=dbscan.labels_[core_mask])
     plt.scatter(anomalies[:, 0], anomalies[:, 1], c="r", marker="x", s=100)
     plt.scatter(non_cores[:, 0], non_cores[:, 1], c=dbscan.labels_[non_core_mask], marker=".")
     if show_xlabels:
@@ -150,7 +150,7 @@ def plot_dbscan(dbscan, X, size, show_xlabels=True, show_ylabels=True):
     if show_ylabels:
         plt.ylabel("$x_2$", rotation=0)
     else:
-        plt.tick_params(labelbottom=False)
+        plt.tick_params(labelleft=False)
     plt.title(f"eps={dbscan.eps:.2f}, min_samples={dbscan.min_samples}")
     plt.grid()
     plt.gca().set_axisbelow(True)
